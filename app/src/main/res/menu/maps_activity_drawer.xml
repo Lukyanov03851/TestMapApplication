@@ -1,0 +1,14 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/item_map"
+        android:checkable="true"
+        android:title="@string/item_map" />
+    <item
+        android:id="@+id/item_map_provider"
+        android:checkable="true"
+        android:title="@string/item_map_provider" />
+    <item
+        android:id="@+id/item_reverse_geocoding_service"
+        android:checkable="true"
+        android:title="@string/item_reverse_geocoding_service" />
+</menu>

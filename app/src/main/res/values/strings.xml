@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">TestMapApplication</string>
+    <string name="title_activity_maps">TestMap</string>
+    <string name="item_map">Map</string>
+    <string name="item_map_provider">Maps provider</string>
+    <string name="item_reverse_geocoding_service">Reverse geocoding service</string>
+    <string name="choose_map_provider_prompt">Choose Map Provider:</string>
+    <string name="google_maps_provider">Maps from Google</string>
+    <string name="map_box_provider">Maps from Mapbox</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="okay">Okay</string>
+    <string name="ok">OK</string>
+    <string name="no_results">No results found!</string>
+    <string name="choose_rev_geocod_service_prompt">Choose reverse geocoding service:</string>
+    <string name="google_maps_geocoding">Reverse geocoding with Google</string>
+    <string name="map_box_geocoding">Reverse geocoding with Mapbox</string>
+    <string name="reverse_geocoding_result">Reverse geocoding result</string>
+    <string name="reverse_geocoding_service">Rev. geocoding service:</string>
+    <string name="google">Google</string>
+    <string name="mapbox">Mapbox</string>
+    <string name="result">Result:</string>
+
+    <string name="mapbox_access_token">pk.eyJ1IjoibHVreWFub3YwMDM4NTExIiwiYSI6ImNqbnhpZ2JiaDAwZjgza29iYnB6Z21reWUifQ.IGApnHYkVm0vbDBh86i_Pw</string>
+
+</resources>
