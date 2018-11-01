@@ -1,5 +1,6 @@
 package vyacheslav.lukyanov.com.testmapapplication;
 
+import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -50,6 +51,7 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
     private NavigationView navigationView;
     private DrawerLayout drawer;
     private GoogleGeocodingResultReceiver mResultGeocodingReceiver;
+    private int currentItem;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -97,17 +99,21 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
 
     protected void setUpNavigationView(NavigationView navigationView, final DrawerLayout drawer) {
         navigationView.setNavigationItemSelectedListener(menuItem -> {
-
-            switch (menuItem.getItemId()) {
-                case R.id.item_map:
-                    showMap();
-                    break;
-                case R.id.item_map_provider:
-                    gotoMapProvidersFragment();
-                    break;
-                case R.id.item_reverse_geocoding_service:
-                    gotoReverseGeocodingFragment();
-                    break;
+            if (currentItem != menuItem.getItemId()) {
+                getSupportFragmentManager().popBackStack(null, FragmentManager.POP_BACK_STACK_INCLUSIVE);
+                switch (menuItem.getItemId()) {
+                    case R.id.item_map:
+                        showMap();
+                        break;
+                    case R.id.item_map_provider:
+                        currentItem = R.id.item_map_provider;
+                        gotoMapProvidersFragment();
+                        break;
+                    case R.id.item_reverse_geocoding_service:
+                        currentItem = R.id.item_reverse_geocoding_service;
+                        gotoReverseGeocodingFragment();
+                        break;
+                }
             }
             drawer.closeDrawer(GravityCompat.START);
             return true;
@@ -121,6 +127,7 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
 
     private void showMap(){
         navigationView.setCheckedItem(R.id.item_map);
+        currentItem = R.id.item_map;
         switch (getCurrentProvider()){
             case Constants.GOOGLE_MAP_PROVIDER:
                 gotoGoogleMapFragment();
